@@ -20,7 +20,7 @@ Resources:
           PortMappings: 
             - 
               ContainerPort: 3000
-              HostPort: 3000
+              HostPort: 0
   WebApp: 
     Type: AWS::ECS::Service
     Properties: 
