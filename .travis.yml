@@ -14,5 +14,5 @@ after_success:
   - docker build -t 3r1co/nodetest .
   - docker tag 3r1co/nodetest $IMAGE_NAME
   - docker push $IMAGE_NAME
-  - aws cloudformation deploy --template-file ./ecs-task.yaml --stack-name ecstask --region eu-west-1 --parameter-override "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
-  - aws cloudformation update-stack --template-body file://./ecs-task.yaml --stack-name ecstask --region eu-west-1 --parameters "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
+  - aws cloudformation deploy --template-file ./ecs-task.yaml --stack-name ecs-deployment --region eu-west-1 --parameter-override "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
+  - aws cloudformation update-stack --template-body file://./ecs-task.yaml --stack-name ecs-deployment --region eu-west-1 --parameters "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
