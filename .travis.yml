@@ -7,4 +7,8 @@ script:
   - npm install
 
 after_success:
+  - pip install --user awscli 
+  - eval $(aws ecr get-login --region eu-west-1 --no-include-email)
   - docker build -t 3r1co/nodetest .
+  - docker tag 3r1co/nodetest 868894423383.dkr.ecr.eu-west-1.amazonaws.com/isentest
+  - docker push 868894423383.dkr.ecr.eu-west-1.amazonaws.com/isentest
