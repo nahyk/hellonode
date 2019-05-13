@@ -1,0 +1,10 @@
+language: node_js
+
+services:
+  - docker
+
+before_install:
+  - docker build -t 3r1co/nodetest .
+
+script:
+  - npm install
