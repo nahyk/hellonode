@@ -17,4 +17,4 @@ after_success:
   - sh ./install.sh
   - kubectl set image deployment/deploy deploy=/usr/src/app/868894423383.dkr.ecr.eu-west-1.amazonaws.com/isentest:1.0-$TRAVIS_BUILD_NUMBER
   - kubectl rolling-update 868894423383.dkr.ecr.eu-west-1.amazonaws.com/isentest --image=/ust/src/app/868894423383.dkr.ecr.eu-west-1.amazonaws.com/isentest:1.0-$TRAVIS_BUILD_NUMBER
-  
+  - kubectl apply -f kubernetes.yaml  
