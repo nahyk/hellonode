@@ -7,6 +7,5 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 mkdir ${HOME}/.kube
 cp config ${HOME}/.kube/config
 
-kubectl config set clusters.default.certificate-authority-data "$KUBE_CLUSTER_CERTIFICATE"
 kubectl config set users.default.username "$KUBE_CLIENT_CERTIFICATE"
 kubectl config set users.default.password "$KUBE_CLIENT_KEY"
