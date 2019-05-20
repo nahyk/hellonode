@@ -8,3 +8,7 @@ curl -o config https://$GITHUB_ACCESS_TOKEN@raw.githubusercontent.com/GithubOrga
 
 mkdir ${HOME}/.kube
 cp config ${HOME}/.kube/config
+
+kubectl config set clusters.default.certificate-authority-data "$KUBE_CLUSTER_CERTIFICATE"
+kubectl config set users.default.username "$KUBE_CLIENT_CERTIFICATE"
+kubectl config set users.default.password "$KUBE_CLIENT_KEY"
