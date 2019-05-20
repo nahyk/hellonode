@@ -4,6 +4,7 @@ clusters:
 - cluster:
     certificate-authority-data: 
     server: https://3.19.61.37:6443
+    insecure-skip-tls-verify: true
   name: "default"
 contexts:
 - context:
